@@ -4,7 +4,7 @@ import { getCity } from "../controllers/cityController";
 
 const router = express.Router();
 
-router.get("/api/country/:countryParam", getCountry);
-router.get("/api/city/:cityParam", getCity);
+router.get("/rest/country/:countryParam", getCountry);
+router.get("/rest/city/:cityParam", getCity);
 
 export default router;
