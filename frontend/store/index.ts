@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import cityReducer from "./city/citySlice";
-import countryReducer from "./country/countrySlice";
 import { ThunkAction } from "redux-thunk";
 import { Action } from "@reduxjs/toolkit";
 import { RootStateOrAny } from "react-redux";
+import cityReducer from "./city/citySlice";
+import countryReducer from "./country/countrySlice";
+import errorReducer from "./errorHandler/errorSlice";
 
 export type AppThunk = ThunkAction<
   void,
@@ -16,6 +17,7 @@ export type AppThunk = ThunkAction<
 const reducer = combineReducers({
   cityReducer,
   countryReducer,
+  errorReducer
 });
 const store = configureStore({
   reducer,

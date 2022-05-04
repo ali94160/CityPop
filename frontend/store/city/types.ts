@@ -1,6 +1,5 @@
 export interface CityState {
   city: City | {};
-  errorMessage: string;
   loading: boolean;
 }
 

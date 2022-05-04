@@ -3,6 +3,7 @@ import axios from "axios";
 import { AppThunk } from "../index";
 import { CityState, City } from "./types";
 import { Platform } from "react-native";
+import { setErrorMessage, setOpenSnackbar } from "../errorHandler/errorSlice";
 
 let baseURL: string | null = null;
 Platform.OS === "android"
@@ -11,7 +12,6 @@ Platform.OS === "android"
 
 const initialState: CityState = {
   city: {},
-  errorMessage: "",
   loading: false,
 };
 
@@ -22,9 +22,6 @@ const citySlice = createSlice({
     setCity: (state, { payload }: PayloadAction<City>) => {
       state.loading = false;
       state.city = payload;
-    },
-    setErrorMessage: (state, { payload }: PayloadAction<string>) => {
-      state.errorMessage = payload;
     },
     setLoading: (state, { payload }: PayloadAction<boolean>) => {
       state.loading = payload;
@@ -37,15 +34,21 @@ export const getCity = (searchWord: string): AppThunk => {
     dispatch(setLoading(true));
     const url = `${baseURL}/rest/city/${searchWord}`;
     try {
-      const { data } = await axios.get(url);
-      dispatch(setCity(data));
+      const response = await axios.get(url);
+      if (response.status === 200) {
+        dispatch(setCity(response.data));
+        return;
+      }
+      dispatch(setErrorMessage("Something went wrong.."));
+      dispatch(setOpenSnackbar(true));
     } catch (error) {
       dispatch(setErrorMessage("Something went wrong.."));
+      dispatch(setOpenSnackbar(true));
     }
   };
 };
 
-export const { setCity, setErrorMessage, setLoading } = citySlice.actions;
+export const { setCity, setLoading } = citySlice.actions;
 
 export const citySelector = (state: { cityReducer: CityState }) =>
   state.cityReducer;
