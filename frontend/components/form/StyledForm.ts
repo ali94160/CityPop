@@ -18,11 +18,14 @@ export const StyledIconButton = styled(IconButton)`
 
 export const StyledWrapper = styled.View`
   align-items: center;
+  margin-top: 3%;
 `;
 
 export const StyledTitleWrapper = styled.View`
   height: 150px;
   width: 60%;
+  height: 50%;
+  justify-content: center;
   margin: 0 auto;
 `;
 

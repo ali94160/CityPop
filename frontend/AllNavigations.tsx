@@ -18,6 +18,11 @@ export type RootStackParamList = {
 };
 
 const AllNavigations = () => {
+  const customOptions = {
+    headerTransparent: true,
+    headerTitle: "",
+  };
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -26,10 +31,26 @@ const AllNavigations = () => {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="SearchCountry" component={SearchCountryScreen} />
-        <Stack.Screen name="SearchCity" component={SearchCityScreen} />
-        <Stack.Screen name="CountryList" component={CountryListScreen} />
-        <Stack.Screen name="CityList" component={CityListScreen} />
+        <Stack.Screen
+          options={customOptions}
+          name="SearchCountry"
+          component={SearchCountryScreen}
+        />
+        <Stack.Screen
+          options={customOptions}
+          name="SearchCity"
+          component={SearchCityScreen}
+        />
+        <Stack.Screen
+          options={customOptions}
+          name="CountryList"
+          component={CountryListScreen}
+        />
+        <Stack.Screen
+          options={customOptions}
+          name="CityList"
+          component={CityListScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
