@@ -4,6 +4,7 @@ import { TextInput, IconButton } from "react-native-paper";
 export const StyledTextInput = styled(TextInput)`
   width: 95%;
   margin: 0 auto;
+  text-align: center;
 `;
 
 export const StyledView = styled.View`

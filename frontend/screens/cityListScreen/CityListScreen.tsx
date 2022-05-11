@@ -1,11 +1,25 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { StyledView } from "./StyledCityListScreen";
+import {
+  StyledView,
+  StyledTitleView,
+  StyledContentView,
+  StyledTitle,
+  StyledPopulation,
+  StyledText,
+} from "./StyledCityListScreen";
 
 export default function CityListScreen() {
   return (
     <StyledView>
-      <Text>CityList</Text>
+      <StyledTitleView>
+        <StyledTitle>City</StyledTitle>
+      </StyledTitleView>
+
+      <StyledContentView>
+        <StyledText>POPULATION</StyledText>
+        <StyledPopulation>population number</StyledPopulation>
+      </StyledContentView>
     </StyledView>
   );
 }
