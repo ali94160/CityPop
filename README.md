@@ -49,6 +49,8 @@ COUNTRY_URL=http://api.geonames.org/searchJSON?style=LONG&lang=se&maxRows=3&user
 4. Change directory into backend and type "npm install".
 5. Change diretory into frontend folder and type "npm install".
 6. Stay in the frontend diretory and type "npm start" to start the project.
-7. Enjoy the application!
+7. Run the IOS or Android Simulator. 
+(If you would like to run the application on your mobile device then you have to replace the localhost to "your IP-Adress".)
+8. Enjoy the application!
 
 Author: Ali Al-mousawi
