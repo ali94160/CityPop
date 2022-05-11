@@ -43,8 +43,8 @@ Search for countries and cities to see their population in a proper and fun way.
 ### How to start the application:
 1. Clone the repo
 2. Go into the backend directory and create a ".env" file and add the following: <br />
-PORT=4000
-CITY_URL=http://api.geonames.org/searchJSON?&style=LONG&maxRows=1&username=weknowit&name_equals=
+PORT=4000  <br />
+CITY_URL=http://api.geonames.org/searchJSON?&style=LONG&maxRows=1&username=weknowit&name_equals=  <br />
 COUNTRY_URL=http://api.geonames.org/searchJSON?style=LONG&lang=se&maxRows=3&username=weknowit&cities=cities500&orderby=population&country=
 4. Change directory into backend and type "npm install".
 5. Change diretory into frontend folder and type "npm install".
