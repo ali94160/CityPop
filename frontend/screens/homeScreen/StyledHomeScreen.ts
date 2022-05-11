@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const StyledView = styled.View`
-  flex: 1;
+  flex: 0.8;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -17,5 +17,5 @@ export const StyledButtonGroup = styled.View`
 `;
 
 export const StyledLogoWrapper = styled.View`
-  flex: 0.4;
+  flex: 0.3;
 `;

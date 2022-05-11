@@ -11,7 +11,7 @@ Platform.OS === "android"
   : (baseURL = "http://localhost:4000");
 
 const initialState: CountryState = {
-  country: {},
+  country: null,
   loading: false,
 };
 
@@ -19,7 +19,7 @@ const countrySlice = createSlice({
   name: "country",
   initialState,
   reducers: {
-    setCountry: (state, { payload }: PayloadAction<Country>) => {
+    setCountry: (state, { payload }: PayloadAction<Country | null>) => {
       state.loading = false;
       state.country = payload;
     },

@@ -1,5 +1,8 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { useEffect } from "react";
+import { City } from "../../store/city/types";
+import { RouteProp } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { setCity } from "../../store/city/citySlice";
 import {
   StyledView,
   StyledTitleView,
@@ -9,16 +12,29 @@ import {
   StyledText,
 } from "./StyledCityListScreen";
 
-export default function CityListScreen() {
+interface Props {
+  route: RouteProp<{ params: { city: City } }, "params">;
+}
+
+export default function CityListScreen({ route }: Props) {
+  const { city, population } = route.params.city;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(setCity(null));
+    };
+  }, []);
+
   return (
     <StyledView>
       <StyledTitleView>
-        <StyledTitle>City</StyledTitle>
+        <StyledTitle>{city}</StyledTitle>
       </StyledTitleView>
 
       <StyledContentView>
         <StyledText>POPULATION</StyledText>
-        <StyledPopulation>population number</StyledPopulation>
+        <StyledPopulation>{population}</StyledPopulation>
       </StyledContentView>
     </StyledView>
   );

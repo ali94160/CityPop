@@ -6,6 +6,8 @@ import CountryListScreen from "./screens/countryListScreen/CountryListScreen";
 import CityListScreen from "./screens/cityListScreen/CityListScreen";
 import SearchCountryScreen from "./screens/searchCountryScreen/SearchCountryScreen";
 import SearchCityScreen from "./screens/searchCityScreen/SearchCityScreen";
+import { City } from "./store/city/types";
+import { Country } from "./store/country/types";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -13,8 +15,8 @@ export type RootStackParamList = {
   Home: undefined;
   SearchCountry: undefined;
   SearchCity: undefined;
-  CountryList: undefined;
-  CityList: undefined;
+  CountryList: { country: Country };
+  CityList: { city: City };
 };
 
 const AllNavigations = () => {

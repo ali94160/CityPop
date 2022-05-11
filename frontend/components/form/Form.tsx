@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   StyledTextInput,
   StyledView,
@@ -12,11 +12,15 @@ interface Props {
   placeholder: string;
   title: string;
   handleSearch: (searchword: string) => void;
+  loading: boolean;
 }
 
-const Form = ({ placeholder, title, handleSearch }: Props) => {
+const Form = ({ placeholder, title, handleSearch, loading }: Props) => {
   const [searchWord, setSearchWord] = useState("");
-
+  const handlePress = () => {
+    handleSearch(searchWord.trim());
+    setSearchWord("");
+  };
   return (
     <StyledView>
       <StyledTitleWrapper>
@@ -31,9 +35,10 @@ const Form = ({ placeholder, title, handleSearch }: Props) => {
           onChangeText={(searchWord) => setSearchWord(searchWord)}
         />
         <StyledIconButton
-          icon="magnify"
+          disabled={searchWord ? false : true}
+          icon={loading ? "loading" : "magnify"}
           size={35}
-          onPress={() => handleSearch(searchWord)}
+          onPress={handlePress}
         />
       </StyledWrapper>
     </StyledView>

@@ -1,5 +1,5 @@
 export interface CityState {
-  city: City | {};
+  city: City | null;
   loading: boolean;
 }
 

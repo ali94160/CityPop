@@ -1,5 +1,4 @@
-import React from "react";
-import { StyledButton } from "./StyledButton";
+import { StyledButton, StyledText } from "./StyledButton";
 
 interface Props {
   mode: "text" | "outlined" | "contained";
@@ -9,10 +8,8 @@ interface Props {
 
 export default function Button({ children, mode, onPress }: Props) {
   return (
-    <React.Fragment>
-      <StyledButton onPress={onPress} mode={mode}>
-        {children}
-      </StyledButton>
-    </React.Fragment>
+    <StyledButton onPress={onPress} mode={mode}>
+      <StyledText>{children}</StyledText>
+    </StyledButton>
   );
 }

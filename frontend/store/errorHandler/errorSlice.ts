@@ -19,7 +19,6 @@ const errorSlice = createSlice({
   },
 });
 
-
 export const { setErrorMessage, setOpenSnackbar } = errorSlice.actions;
 
 export const errorSelector = (state: { errorReducer: ErrorState }) =>

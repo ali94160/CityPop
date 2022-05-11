@@ -1,7 +1,7 @@
 import { City } from "../city/types";
 
 export interface CountryState {
-  country: Country | {};
+  country: Country | null;
   loading: boolean;
 }
 

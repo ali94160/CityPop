@@ -1,12 +1,12 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../../allNavigations";
+import Button from "../../components/button/Button";
 import {
   StyledView,
   StyledLogo,
   StyledButtonGroup,
   StyledLogoWrapper,
 } from "./StyledHomeScreen";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../allNavigations";
-import Button from "../../components/button/Button";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
