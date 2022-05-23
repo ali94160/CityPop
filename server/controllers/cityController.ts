@@ -3,6 +3,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
+// Funtionen hämtar ut en stad med dess id, name och population.
 export const getCity = async (req: Request, res: Response) => {
   !req.params.cityParam && res.status(404);
   const cityURL = process.env.CITY_URL + req.params.cityParam;

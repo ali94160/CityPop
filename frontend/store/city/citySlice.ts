@@ -29,6 +29,8 @@ const citySlice = createSlice({
   },
 });
 
+// En funktion som tar in ett sökord användaren har fyllt i och sedan gör en getRequest. 
+// svaret vi får tillbaka skickar vi sedan in i funtionen setCity som dispatchas.
 export const getCity = (searchWord: string): AppThunk => {
   return async (dispatch) => {
     dispatch(setLoading(true));

@@ -19,6 +19,8 @@ const errorSlice = createSlice({
   },
 });
 
+// Här exporterar jag funtionerna för att använda dem i andra slices. För att skicka ett error-message eller 
+// för att öppna en snackbar.
 export const { setErrorMessage, setOpenSnackbar } = errorSlice.actions;
 
 export const errorSelector = (state: { errorReducer: ErrorState }) =>

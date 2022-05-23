@@ -10,6 +10,11 @@ type City = {
   population: number;
 };
 
+// Funtionen hämtar en stad respektive dem 3 största städerna.
+// Jag tar emot det användaren har skivit ifrån req.params.
+// Därefter har användar jag iso(Används för att omvandla namn på länder till country-Code som t.ex. Sweden = SE)
+// Slutligen skapar jag en array av cities med dem 3 största städerna i objektet.
+// Vid fel skickar jag ut statuskoder som används i frontend.
 export const getCountry = async (req: Request, res: Response) => {
   if (!req.params.countryParam)
     return res.status(400).send({ status: "Missing parameter in the url" });
