@@ -18,7 +18,7 @@ interface Props {
 const Form = ({ placeholder, title, handleSearch, loading }: Props) => {
   const [searchWord, setSearchWord] = useState("");
   const handlePress = () => {
-    handleSearch(searchWord.trim());
+    handleSearch(searchWord.trim().replace(/[0-9]/g, ""));
     setSearchWord("");
   };
   return (
